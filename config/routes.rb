@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  root 'statics#home'
+  devise_for :users
+  root "statics#home"
+  resources :authentications, only: [:new]
+
+  resources :users, except: [:new, :create]
+
 end
