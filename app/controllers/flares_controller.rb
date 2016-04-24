@@ -36,4 +36,9 @@ class FlaresController < ApplicationController
       redirect_to :back
     end
   end
+
+  private
+      def flare_params
+          params.require(:flare).permit(:title, :description, :image, :category, :location, :date, :time, :photo)
+      end
 end

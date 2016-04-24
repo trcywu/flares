@@ -1,5 +1,6 @@
 class Flare < ActiveRecord::Base
   belongs_to :user
+  mount_uploader :photo, PhotoUploader
 
   # validates :title, presence: true, length: { in: 3..50 }
   # validates :description, presence: true

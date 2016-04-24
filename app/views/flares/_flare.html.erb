@@ -6,6 +6,8 @@
     <p class="card-text"><%= flare.date.strftime("%B %d, %Y") %></p>
     <p class="card-text"><%= flare.time %></p>
     <p class="card-text"><%= flare.location %></p>
+    <p class="card-text"><%= image_tag flare.photo %>
+    </p>
     <p class="card-text"><small class="text-muted">Listed <%= distance_of_time_in_words(Time.now, flare.created_at) %> ago</small></p>
     <%= link_to "Edit", edit_flare_path(flare), class: "btn btn-primary" %>
     <%= link_to "Delete", flare_path(flare), method: :delete, class: "btn btn-primary" %>

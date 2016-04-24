@@ -20,8 +20,4 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  private
-      def flare_params
-          params.require(:flare).permit(:title, :description, :image, :category, :location, :date, :time)
-      end
 end
