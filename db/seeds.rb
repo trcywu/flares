@@ -9,7 +9,7 @@
 User.destroy_all
 Flare.destroy_all
 
-u1 = User.create!({
+u1 = User.create!(
   first_name: "Tracy",
   last_name: "Wu",
   username: "tracywu",
@@ -19,9 +19,9 @@ u1 = User.create!({
   email: "twu@gmail.com",
   password: "password",
   password_confirmation: "password"
-}),
+)
 
-u2 = User.create!({
+u2 = User.create!(
   first_name: "John",
   last_name: "Smith",
   username: "jsmith",
@@ -31,10 +31,10 @@ u2 = User.create!({
   email: "jsmith@gmail.com",
   password: "password",
   password_confirmation: "password"
-}),
+)
 
-f1 = Flare.create!({
-  user_id: 1,
+f1 = Flare.create!(
+  user_id: u1.id, 
   title: "Highaskite @ Shoreditch",
   category: "Music",
   location: "Shoreditch",
@@ -42,10 +42,10 @@ f1 = Flare.create!({
   image: "highaskite ticket pic goes here",
   date: "230416",
   time: "1700"
-})
+)
 
-f2 = Flare.create!({
-  user_id: 1,
+f2 = Flare.create!(
+  user_id: u1.id, 
   title: "SectionBoyz @ Brixton",
   category: "Gig",
   location: "Brixton",
@@ -53,10 +53,10 @@ f2 = Flare.create!({
   image: "sboyz ticket pic goes here",
   date: "010416",
   time: "2100"
-})
+)
 
-f1 = Flare.create!({
-  user_id: 2,
+f3 = Flare.create!(
+  user_id: u2.id, 
   title: "Jazz @ Soho",
   category: "Music",
   location: "Ronnie Scotts",
@@ -64,10 +64,10 @@ f1 = Flare.create!({
   image: "ronnie scotts pic",
   date: "010516",
   time: "1800"
-})
+)
 
-f3 = Flare.create!({
-  user_id: 2,
+f4 = Flare.create!(
+  user_id: u2.id,
   title: "Beethoven @ Royal Albert",
   category: "Recital",
   location: "Royal Albert Hall",
@@ -75,4 +75,4 @@ f3 = Flare.create!({
   image: "Beethoven pic",
   date: "010916",
   time: "2000"
-})
+)
