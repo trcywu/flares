@@ -12,7 +12,7 @@ class FlaresController < ApplicationController
   end
 
   def create
-    @flare = current_user.flare.new(flare_params)
+    @flare = current_user.flares.new(flare_params)
        if @flare.save
            flash[:success] = "Your flare has been listed!"
            redirect_to flares_path
@@ -29,5 +29,11 @@ class FlaresController < ApplicationController
   end
 
   def destroy
+    @flare = Flare.find(params[:id])
+    if @flare.destroy
+      redirect_to flares_path
+    else
+      redirect_to :back
+    end
   end
 end
