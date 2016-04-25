@@ -1,3 +1,5 @@
 <h1>Flares#show</h1>
 <p>Find me in app/views/flares/show.html.erb</p>
 <%= render @flare %>
+<%= render partial: 'comments/form', locals: { commentable: @flare } %>
+<%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @flare } %>

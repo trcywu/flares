@@ -62,6 +62,7 @@ gem 'ransack'
 
 gem 'awesome_nested_set'
 
+gem 'acts_as_commentable_with_threading'
 
 
 
