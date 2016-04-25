@@ -1,8 +1,8 @@
 class FlaresController < ApplicationController
   before_action :set_flare, only:[:show, :edit, :update, :destroy]
   def index
-    @users = User.all
-    @flares = Flare.all
+    @q = Flare.search(params[:q])
+    @flares = @q.result(distinct: true)
   end
 
   def new

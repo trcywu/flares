@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @q = Flare.search(params[:q])
+    @flares = @q.result(distinct: true)
   end
 
   def show

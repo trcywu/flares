@@ -63,7 +63,7 @@ f3 = Flare.create!(
 
 f4 = Flare.create!(
   user_id: u2.id,
-  title: "Beethoven @ Royal Albert",
+  title: "English Ballet",
   category: "Recital",
   location: "Royal Albert Hall",
   description: "1 x Beethoven ticket available, gig starting in 30 minutes",
@@ -71,5 +71,20 @@ f4 = Flare.create!(
   time: "2000"
 )
 
+u1.profile_pic = Rails.root.join("app/assets/images/flume.jpg").open
+u1.save!
+
+u2.profile_pic = Rails.root.join("app/assets/images/avicci.jpg").open
+u2.save!
+
 f1.photo = Rails.root.join("app/assets/images/highaskite.jpg").open
 f1.save!
+
+f2.photo = Rails.root.join("app/assets/images/section.jpg").open
+f2.save!
+
+f3.photo = Rails.root.join("app/assets/images/ronnie.jpg").open
+f3.save!
+
+f4.photo = Rails.root.join("app/assets/images/ballet.jpg").open
+f4.save!

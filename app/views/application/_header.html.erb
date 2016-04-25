@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-faded">
-  <img link_to "logo.png" class="nav navbar-brand">
+  <img src="app/assets/images/logo.png" class="nav navbar-brand">
   <ul class="nav navbar-nav">
     <li class="nav-item active">
      <%= link_to "Home", root_path, class: "nav-link" %>
@@ -11,13 +11,23 @@
       <%= link_to "Flares", flares_path, class: "nav-link" %>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Categories</a>
+      <%= link_to "Categories", flares_path, class: "nav-link" %>
     </li>
-  </ul>
-  <form class="form-inline pull-xs-left">
-    <input class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-success-outline" type="submit">Search</button>
-  </form>
+
+
+    </ul>
+    <form class="form-inline pull-xs-left">
+    <ul class="nav-item">
+    <%= search_form_for @q do |f| %>
+      <p>
+        <%= f.text_field :title_cont, placeholder: "Looking for", class: "form-control" %> near
+        <%= f.text_field :location_cont, placeholder: "Location", class: "form-control" %>
+      <%= f.submit class: "btn btn-success-outline" %>
+    <% end %> 
+    </p>
+    </ul>
+    </form>
+
   <ul class="nav navbar-nav pull-xs-right">
   <li class='nav-item'>
     <%= link_to "New Flare", new_flare_path, class: "nav-link" %>

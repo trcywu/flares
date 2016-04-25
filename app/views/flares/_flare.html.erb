@@ -1,14 +1,109 @@
+
+<% if flare.photo == nil %>
+
+<!-- id: 24, title: "hello world", description: "aoeiwhrauehr awkeuhrv awerv ", category: "", location: "", date: nil, time: nil, user_id: 30, created_at: "2016-04-25 13:26:04", updated_at: "2016-04-25 13:26:04", photo: nil>
+irb(main):002:0>  -->
+
+<div class="card card-block card-inverse card-primary text-xs-center">
+  <blockquote class="card-blockquote">
+    <p class="card-title"><%= flare.title %></p>
+    <footer>
+      <small>
+        <p class="class-text"><%= flare.description %></p>
+      </small>
+    </footer>
+  </blockquote>
+</div>
+
+
+
+<% else %>
+
 <div class="card">
   <%= image_tag flare.photo, class: "img-fluid" %>
   <div class="card-block">
     <h4 class="card-title"><%= flare.title %></h4>
     <p class="card-text"><%= flare.description %></p>
-    <p class="card-text"><%= flare.date %></p>
-    <p class="card-text"><%= flare.time %></p>
-    <p class="card-text"><%= flare.location %></p>
+    <p class="card-text">Category: <%= flare.category %></p>
+    <p class="card-text">Date: <%= flare.date %></p>
+    <p class="card-text">Time: <%= flare.time %></p>
+    <p class="card-text">Location: <%= flare.location %></p>
    
     <p class="card-text"><small class="text-muted">Listed <%= distance_of_time_in_words(Time.now, flare.created_at) %> ago</small></p>
     <%= link_to "Edit", edit_flare_path(flare), class: "btn btn-primary" %>
     <%= link_to "Delete", flare_path(flare), method: :delete, class: "btn btn-primary" %>
-  </div>
+  </div> 
 </div>
+
+<% end %>
+
+
+<!-- <div class="card-columns">
+
+  <div class="card">
+    <%= image_tag flare.photo, class: "img-fluid" %>
+    <div class="card-block">
+      <h4 class="card-title"><%= flare.title %></h4>
+      <p class="card-text"><%= flare.description %></p>
+      <p class="card-text"><%= flare.category %></p>
+      <p class="card-text"><%= flare.date %></p>
+      <p class="card-text"><%= flare.time %></p>
+      <p class="card-text"><%= flare.location %></p>
+      
+      <p class="card-text"><small class="text-muted">Listed <%= distance_of_time_in_words(Time.now, flare.created_at) %> ago</small></p>
+      <%= link_to "Edit", edit_flare_path(flare), class: "btn btn-primary" %>
+      <%= link_to "Delete", flare_path(flare), method: :delete, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="card card-block">
+    <blockquote class="card-blockquote">
+      <p class="card-text"><%= flare.description %></p>
+      <footer>
+        <small class="text-muted">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card">
+    <img class="card-img-top" data-src="..." alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card card-block card-inverse card-primary text-xs-center">
+    <blockquote class="card-blockquote">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+      <footer>
+        <small>
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card card-block text-xs-center">
+    <h4 class="card-title">Card title</h4>
+    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+  <div class="card">
+    <img class="card-img" data-src="..." alt="Card image">
+  </div>
+  <div class="card card-block text-xs-right">
+    <blockquote class="card-blockquote">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      <footer>
+        <small class="text-muted">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card card-block">
+    <h4 class="card-title">Card title</h4>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+</div> -->

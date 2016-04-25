@@ -58,7 +58,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
 
-# gem 'rmagick', '2.13.2'
+gem 'ransack'
+
+gem 'awesome_nested_set'
 
 
 
