@@ -1,4 +1,5 @@
 class FlaresController < ApplicationController
+  before_action :set_flare, only:[:show, :edit, :update, :destroy]
   def index
     @users = User.all
     @flares = Flare.all
@@ -26,6 +27,15 @@ class FlaresController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @flare.update(flare_params)
+        format.html { redirect_to @flare, notice: 'Flare was successfully updated.' }
+        format.json { render :show, status: :ok, post: @flare }
+      else
+        format.html { render :edit }
+        format.json { render json: @flare.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
@@ -38,6 +48,9 @@ class FlaresController < ApplicationController
   end
 
   private
+      def set_flare
+        @flare = Flare.find(params[:id])
+      end
       def flare_params
           params.require(:flare).permit(:title, :description, :image, :category, :location, :date, :time, :photo)
       end

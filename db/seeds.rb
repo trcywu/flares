@@ -14,9 +14,8 @@ u1 = User.create!(
   last_name: "Wu",
   username: "tracywu",
   description: "This is the first user",
-  image: "profile pic goes here",
   location: "Shoreditch",
-  email: "twu@gmail.com",
+  email: "tracy@gmail.com",
   password: "password",
   password_confirmation: "password"
 )
@@ -26,9 +25,8 @@ u2 = User.create!(
   last_name: "Smith",
   username: "jsmith",
   description: "This is the second user",
-  image: "profile pic goes here",
   location: "Knightsbridge",
-  email: "jsmith@gmail.com",
+  email: "john@gmail.com",
   password: "password",
   password_confirmation: "password"
 )
@@ -39,7 +37,6 @@ f1 = Flare.create!(
   category: "Music",
   location: "Shoreditch",
   description: "1 x highaskite ticket available, gig starting in 30 minutes",
-  image: "highaskite ticket pic goes here",
   date: "230416",
   time: "1700"
 )
@@ -50,7 +47,6 @@ f2 = Flare.create!(
   category: "Gig",
   location: "Brixton",
   description: "1 x SectionBoyz ticket available, gig starting in 30 minutes",
-  image: "sboyz ticket pic goes here",
   date: "010416",
   time: "2100"
 )
@@ -61,7 +57,6 @@ f3 = Flare.create!(
   category: "Music",
   location: "Ronnie Scotts",
   description: "1 x jazz ticket available, gig starting in 30 minutes",
-  image: "ronnie scotts pic",
   date: "010516",
   time: "1800"
 )
@@ -72,7 +67,9 @@ f4 = Flare.create!(
   category: "Recital",
   location: "Royal Albert Hall",
   description: "1 x Beethoven ticket available, gig starting in 30 minutes",
-  image: "Beethoven pic",
   date: "010916",
   time: "2000"
 )
+
+f1.photo = Rails.root.join("app/assets/images/highaskite.jpg").open
+f1.save!

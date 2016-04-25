@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424181314) do
+ActiveRecord::Schema.define(version: 20160425101116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20160424181314) do
   create_table "flares", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "image"
     t.string   "category"
     t.string   "location"
     t.date     "date"
@@ -36,7 +35,6 @@ ActiveRecord::Schema.define(version: 20160424181314) do
     t.string   "username"
     t.string   "description"
     t.string   "location"
-    t.text     "image"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
@@ -49,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160424181314) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "profile_pic"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

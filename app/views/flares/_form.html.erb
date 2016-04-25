@@ -1,0 +1,41 @@
+<h1>Flare up</h1>
+<%= form_for @flare do |f| %>
+  <% if @flare.errors.any? %>
+    <% for message in @flare.errors.full_messages %>
+      <div class="alert alert-danger" role="alert">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <fieldset class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :category %>
+    <%= f.text_area :category, class: "form-control" %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, class: "form-control" %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, class: "form-control" %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :photo %>
+    <%= f.file_field :photo, class: "form-control" %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :date %>
+    <%= f.date_field :date, class: "form-control" %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :time %>
+    <%= f.time_field :time, class: "form-control" %>
+  </fieldset>
+  <%= f.submit class: "btn btn-primary" %>
+
+<% end %>
