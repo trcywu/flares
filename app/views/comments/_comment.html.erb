@@ -1,8 +1,11 @@
-<li>
-  <ul>
-    <li><%= comment.user.try(:name) %></li>
-    <li><%= comment.title %></li>
-    <li><%= comment.body %></li>
-    <li><%= link_to 'Delete Comment', comment_path(comment, commentable_type: commentable.class.to_s.underscore, commentable_id: commentable.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  </ul>
-</li>
+<div class="comments-header">  
+  <h4>
+    <%= commentable.comment_threads.count == 0 ? "no" : commentable.comment_threads.count %> comments
+  </h4>
+</div>
+
+<%= render partial: "comments/form", locals: {new_comment: new_comment} %>
+
+<div class="comments-container">  
+  <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
+</div> 

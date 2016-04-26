@@ -11,49 +11,60 @@ class FlaresController < ApplicationController
 
   def show
     @flare = Flare.find(params[:id])
-    @comments = @flare.comments
-    
-    # @comment.move_to_child_of(the_desired_parent_comment)
+
+    @new_comment    = Comment.build_from(@flare, current_user.id, "")
+
+    # @comments = @flare.comments
+
+    # @comments = @flare.comment_threads.order('created_at desc')
+    # @new_comment = Comment.build_from(@flare, current_user, "")
+
   end
 
   def create
-    @q = Flare.search(params[:q])
-    @flares = @q.result(distinct: true)
+    @flare = Flare.new(flare_params)
+    # @flare = current_user.flares.new(flare_params)
+    if @flare.save
+     flash[:success] = "Your flare has been listed!"
+     redirect_to flares_path
+   else
+     render "new"
+   end
 
-    @flare = current_user.flares.new(flare_params)
-       if @flare.save
-           flash[:success] = "Your flare has been listed!"
-           redirect_to flares_path
-       else
-           render "new"
-       end
- 
-  end
 
-  def edit
+        # @comment = @flare.comment_threads.build(comment_params)
 
-  end
+        # if @comment.save
+        #     redirect_to flares_path, { notice: 'Your comment was saved!' }
+        # end
 
-  def update
-    respond_to do |format|
-      if @flare.update(flare_params)
-        format.html { redirect_to @flare, notice: 'Flare was successfully updated.' }
-        format.json { render :show, status: :ok, post: @flare }
-      else
-        format.html { render :edit }
-        format.json { render json: @flare.errors, status: :unprocessable_entity }
+        # render action: :show
       end
-    end
-  end
 
-  def destroy
-    @flare = Flare.find(params[:id])
-    if @flare.destroy
-      redirect_to flares_path
-    else
-      redirect_to :back
-    end
-  end
+      def edit
+
+      end
+
+      def update
+        respond_to do |format|
+          if @flare.update(flare_params)
+            format.html { redirect_to @flare, notice: 'Flare was successfully updated.' }
+            format.json { render :show, status: :ok, post: @flare }
+          else
+            format.html { render :edit }
+            format.json { render json: @flare.errors, status: :unprocessable_entity }
+          end
+        end
+      end
+
+      def destroy
+        @flare = Flare.find(params[:id])
+        if @flare.destroy
+          redirect_to flares_path
+        else
+          redirect_to :back
+        end
+      end
 
   # Caroline: 
   def search
@@ -64,10 +75,10 @@ class FlaresController < ApplicationController
 
 
   private
-      def set_flare
-        @flare = Flare.find(params[:id])
-      end
-      def flare_params
-          params.require(:flare).permit(:title, :description, :image, :category, :location, :date, :time, :photo)
-      end
+  def set_flare
+    @flare = Flare.find(params[:id])
+  end
+  def flare_params
+    params.require(:flare).permit(:title, :description, :image, :category, :location, :start_date, :start_time, :photo)
+  end
 end

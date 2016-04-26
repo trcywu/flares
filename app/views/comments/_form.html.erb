@@ -1,14 +1,32 @@
-<%= form_for(:comment, url: comments_path(commentable_type: commentable.class.to_s.underscore, commentable_id: commentable.id)) do |f| %>
 
-<%= f.text_area :title, placeholder: "Add a title" %>
-  <%= f.text_area :body, placeholder: "Write a Comment" %>
+<%= form_for @new_comment do |f| %>  
+  <%= f.hidden_field :commentable_id, value: @new_comment.commentable_id %>
+  <%= f.hidden_field :commentable_type, value: @new_comment.commentable_type %>
+  <div class="field form-group">
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
+  <div class="field form-group">
+    <%= submit_tag "Post comment", class: 'btn btn-primary' %>
+  </div>
+<% end %> 
 
-  <%= f.label :parent_id, placeholder: "Parent_id" %>
-  <%= f.number_field :parent_id %>
 
-  <%#= f.select :parent_id, nested_set_options(Flare, @flare) {|i| "#{'-' * i.level} #{i.title}" } %>
 
-  <%#= select_tag 'parent_id', options_for_select(nested_set_options(Flare) {|i| "#{'-' * i.level} #{i.title}" } ) %>
-  <%= f.submit "Comment!" %>
 
-<% end %>
+
+
+
+
+
+
+
+<%#= form_for(:comment, url: comments_path(commentable_type: commentable.class.to_s.underscore, commentable_id: commentable.id)) do |f| %>
+
+<%#= f.text_area :title, placeholder: "Add a title" %>
+  <%#= f.text_area :body, placeholder: "Write a Comment" %>
+
+  <%#= f.hidden_field :parent_id, comment.id %>
+
+  <%#= f.submit "Comment!" %>
+
+<%# end %>
