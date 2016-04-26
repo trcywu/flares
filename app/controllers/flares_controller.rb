@@ -12,6 +12,8 @@ class FlaresController < ApplicationController
   def show
     @flare = Flare.find(params[:id])
     @comments = @flare.comments
+    
+    # @comment.move_to_child_of(the_desired_parent_comment)
   end
 
   def create

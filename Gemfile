@@ -46,6 +46,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'hirb'
 gem 'devise'
 
 gem 'rails_12factor', group: :production 
