@@ -1,7 +1,7 @@
 class FlaresController < ApplicationController
   before_action :set_flare, only:[:show, :edit, :update, :destroy]
   def index
-
+    @flares = Flare.all
     # @comments = @flare.comments
   end
 
@@ -11,13 +11,7 @@ class FlaresController < ApplicationController
 
   def show
     @flare = Flare.find(params[:id])
-    # @user_who_commented = @current_user
-    # @comment = Comment.build_from( @flare, @user_who_commented.id, "Hey guys this is my comment!" )
-    # @comment.move_to_child_of(the_desired_parent_comment)
-    # @all_comments = @article.comment_threads
-
     @comments = @flare.comments
-  
   end
 
   def create
