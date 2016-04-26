@@ -18,7 +18,7 @@
     </ul>
     <form class="form-inline pull-xs-left">
     <ul class="nav-item">
-    <%= search_form_for @q do |f| %>
+    <%= search_form_for @q, url: search_flares_path, html: { method: :post } do |f| %>
       <p>
         <%= f.text_field :title_cont, placeholder: "Looking for", class: "form-control" %> near
         <%= f.text_field :location_cont, placeholder: "Location", class: "form-control" %>

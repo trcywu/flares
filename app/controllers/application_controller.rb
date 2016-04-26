@@ -4,6 +4,20 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+
+  # Caroline:
+  before_filter :set_global_search_variable
+
+    def set_global_search_variable
+      @q = Flare.search(params[:q])
+      @flares = @q.result(distinct: true)
+    end
+
+  # End.
+
+
+
+
   protected 
   def after_sign_in_path_for(resource)
     root_path

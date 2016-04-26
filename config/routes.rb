@@ -8,6 +8,15 @@ Rails.application.routes.draw do
 
   resources :flares
 
+  # Caroline:
+  resources :flares do
+    collection do
+      match 'search' => 'flares#search', via: [:get, :post], as: :search  
+    end
+  end
+
+
+
   resources :comments
 
 end

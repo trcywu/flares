@@ -1,15 +1,12 @@
 class FlaresController < ApplicationController
   before_action :set_flare, only:[:show, :edit, :update, :destroy]
   def index
-    @q = Flare.search(params[:q])
-    @flares = @q.result(distinct: true)
-    @comments = @flare.comments
+
+    # @comments = @flare.comments
   end
 
   def new
     @flare = Flare.new
-    @q = Flare.search(params[:q])
-    @flares = @q.result(distinct: true)
   end
 
   def show
@@ -20,8 +17,6 @@ class FlaresController < ApplicationController
     # @all_comments = @article.comment_threads
 
     @comments = @flare.comments
-    @q = Flare.search(params[:q])
-    @flares = @q.result(distinct: true)
   
   end
 
@@ -40,6 +35,7 @@ class FlaresController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -52,8 +48,6 @@ class FlaresController < ApplicationController
         format.json { render json: @flare.errors, status: :unprocessable_entity }
       end
     end
-    @q = Flare.search(params[:q])
-    @flares = @q.result(distinct: true)
   end
 
   def destroy
@@ -64,6 +58,14 @@ class FlaresController < ApplicationController
       redirect_to :back
     end
   end
+
+  # Caroline: 
+  def search
+    index
+    render :index
+  end
+
+
 
   private
       def set_flare
