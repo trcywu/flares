@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
 
     def set_global_search_variable
       @q = Flare.search(params[:q])
-      @flares = @q.result(distinct: true)
     end
 
   # End.

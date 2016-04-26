@@ -33,8 +33,10 @@ irb(main):002:0>  -->
     <p class="card-text"><small class="text-muted">Listed <%= distance_of_time_in_words(Time.now, flare.created_at) %> ago</small></p>
     <%= link_to "Edit", edit_flare_path(flare), class: "btn btn-primary" %>
     <%= link_to "Delete", flare_path(flare), method: :delete, class: "btn btn-primary" %>
+    <i class="fa fa-comments"></i> <%= flare.comments.count %>
   </div> 
 </div>
+
 
 <% end %>
 
