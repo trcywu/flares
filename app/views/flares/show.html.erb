@@ -2,7 +2,7 @@
 <div class="container">
 
 <%= render @flare %>
-<%= render partial: 'comments/form', locals: { commentable: @flare } %>
+
 <%= render partial: "comments/comment", locals: {commentable: @flare, new_comment: @comment} %>  
 
 </div>
