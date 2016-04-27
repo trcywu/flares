@@ -12,12 +12,9 @@ class FlaresController < ApplicationController
   def show
     @flare = Flare.find(params[:id])
 
-    @new_comment    = Comment.build_from(@flare, current_user.id, "")
+    @new_comment = Comment.build_from(@flare, current_user.id, "")
 
     # @comments = @flare.comments
-
-    # @comments = @flare.comment_threads.order('created_at desc')
-    # @new_comment = Comment.build_from(@flare, current_user, "")
 
   end
 
@@ -79,6 +76,6 @@ class FlaresController < ApplicationController
     @flare = Flare.find(params[:id])
   end
   def flare_params
-    params.require(:flare).permit(:title, :description, :image, :category, :location, :start_date, :start_time, :photo)
+    params.require(:flare).permit(:title, :description, :image, :category, :location, :start_date, :start_time, :photo, :current_user)
   end
 end

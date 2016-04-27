@@ -27,9 +27,7 @@ irb(main):002:0>  -->
     <p class="card-text"><%= flare.description %></p>
     <p class="card-text">Category: <%= flare.category %></p>
     <p class="card-text">Date: <%= flare.start_date.strftime("%B %d, %Y") %></p>
-    <% if flare.start_time %>
       <p class="card-text">Time: <%= flare.start_time.strftime('%H:%M') %></p>
-    <% end %>
     <p class="card-text">Location: <%= flare.location %></p>
    
     <p class="card-text"><small class="text-muted">Listed <%= distance_of_time_in_words(Time.now, flare.created_at) %> ago</small></p>
