@@ -4,8 +4,4 @@ $(document).ready(function() {
     $(this).closest('.comment').find('.reply-form').toggle()
   });
 
-  $("#reply-button").click(function() {
-    console.log("yay")
-  })
 })
-  

@@ -55,13 +55,37 @@
    margin-left: 25px;
  }
 
+ .navbar navbar{
+
+ }
+
+#rocket {
+  background-image: url(asset-path('rocket.jpeg'));
+  background-size: cover;
+  background-position: center 40%;
+}
 
 
+.jumbotron {
+  color: #C86100;
+}
 
+.navbar {
+color: #FCB040;
+background-color: #2DB8AF;
+a {
+  border: 4px solid #FCB040;
+  padding: 4px 10px;
+  font-size: 14px;
+  color: white;
+}
 
+img {
+  width: 33px;
+  height: auto;
 
-
-
+}
+}
 
 
 
