@@ -1,9 +1,18 @@
-<h1>All Users</h1>
-<div class="card-deck-wrapper">
-  <div class="card-deck">
-   <div class="card-columns">
-    <%= render @users %>
-   </div> 
-  </div>
-</div>
+<h1>Nearby</h1>
 
+<p>
+<strong>Location:</strong>
+<%= @flare.address %>
+</p>
+<p>
+<strong>Latitude:</strong>
+<%= @flare.latitude %>
+</p>
+<p>
+<strong>Longitude:</strong>
+<%= @flare.longitude %>
+</p>
+
+<!-- <%# for flare in @flare.nearbys(10) %>
+<li><%#= link_to flare.address, flare %>(<#%= flare.distance.round(2) %> miles)</li>
+<#% end %> -->

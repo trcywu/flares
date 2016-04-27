@@ -1,5 +1,6 @@
 class FlaresController < ApplicationController
   before_action :set_flare, only:[:show, :edit, :update, :destroy]
+
   def index
     @flares = Flare.all
     # @comments = @flare.comments
@@ -28,14 +29,6 @@ class FlaresController < ApplicationController
      render "new"
    end
 
-
-        # @comment = @flare.comment_threads.build(comment_params)
-
-        # if @comment.save
-        #     redirect_to flares_path, { notice: 'Your comment was saved!' }
-        # end
-
-        # render action: :show
       end
 
       def edit
@@ -76,6 +69,6 @@ class FlaresController < ApplicationController
     @flare = Flare.find(params[:id])
   end
   def flare_params
-    params.require(:flare).permit(:title, :description, :image, :category, :location, :start_date, :start_time, :photo, :current_user)
+    params.require(:flare).permit(:title, :description, :image, :category, :location, :address, :latitude, :longitude, :start_date, :start_time, :photo, :current_user)
   end
 end
