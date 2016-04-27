@@ -23,7 +23,7 @@ irb(main):002:0>  -->
 <div class="card">
   <%= image_tag flare.photo, class: "img-fluid" %>
   <div class="card-block">
-    <h4 class="card-title"><%= flare.title %></h4>
+    <h4 class="card-title"><%= link_to flare.title, flare_path(flare.id) %></h4>
     <p class="card-text"><%= flare.description %></p>
     <p class="card-text">Category: <%= flare.category %></p>
     <p class="card-text">Date: <%= flare.start_date.strftime("%B %d, %Y") %></p>
@@ -33,8 +33,23 @@ irb(main):002:0>  -->
     <p class="card-text">Location: <%= flare.location %></p>
    
     <p class="card-text"><small class="text-muted">Listed <%= distance_of_time_in_words(Time.now, flare.created_at) %> ago</small></p>
-    <%= link_to "Edit", edit_flare_path(flare), class: "btn btn-primary" %>
-    <%= link_to "Delete", flare_path(flare), method: :delete, class: "btn btn-primary" %>
+
+
+    <% if current_page?(flare_path(flare)) %>
+      
+      <% if flare.user_id == current_user.id %>
+      <%= link_to "Edit", edit_flare_path(flare), class: "btn btn-primary" %>
+      <%= link_to "Delete", flare_path(flare), method: :delete, class: "btn btn-primary" %>
+        <% end %>
+
+
+    <% else %>
+      <%= link_to "More", flare_path(flare.id) , class: "btn btn-primary" %>
+    <% end %>
+
+
+
+
     <i class="fa fa-comments"></i> <%= flare.comments.count %>
   </div> 
 </div>
