@@ -1,5 +1,13 @@
 <h1>Nearby</h1>
+<%= form_tag maps_path, method: :get do %>
+  <%= label :address, "Search nearby : " %>
+  <%= text_field_tag :address, params[:address] %>
 
+  <%= label :distance, "Distance : " %>
+  <%= text_field_tag :distance, params[:distance] %>
+
+  <%= submit_tag "Search" %>
+<% end %>
 
 
 <%# for flare in @flare.nearbys(5) %>
