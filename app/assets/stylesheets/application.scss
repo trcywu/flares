@@ -82,10 +82,16 @@ body.homepage {
 color: #FCB040;
 background-color: #2DB8AF;
 a {
-  border: 3px solid #FCB040;
+  // border: 3px solid #FCB040;
   border-radius: 3px;
   padding: 4px 10px;
   font-size: 12px;
+  color: white;
+  background-color: #FCCA83;
+}
+
+a:hover {
+  background-color: #FCB040;
   color: white;
 }
 
