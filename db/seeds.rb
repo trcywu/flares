@@ -113,6 +113,17 @@ f8 = Flare.create!(
   address: "SE1 8XX"
 )
 
+f9 = Flare.create!(
+  user_id: u2.id,
+  title: "Cocktail Making class for 2 tonight",
+  category: "Theatre",
+  location: "London",
+  description: "2 x tickets available under the name Steven King",
+  start_date: "20160429",
+  start_time: "2016-04-29 20:00:00 UTC",
+  address: "SE1 8XX"
+)
+
 
 
 
@@ -146,5 +157,8 @@ f7.save!
 
 f8.photo = Rails.root.join("app/assets/images/midsummer.jpg").open
 f8.save!
+
+f9.photo = Rails.root.join("app/assets/images/campari.jpg").open
+f9.save!
 
 
