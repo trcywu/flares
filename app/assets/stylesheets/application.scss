@@ -14,6 +14,10 @@
  *= require_tree .
  *= require_self
  */
+ .dropdown-menu {
+  min-width: 0px;
+}
+
 
  .img-fluid {
   max-width: 400px;
@@ -81,23 +85,26 @@ body.homepage {
 .navbar {
 color: #FCB040;
 background-color: #2DB8AF;
+// padding-top: 10px;
 a {
   // border: 3px solid #FCB040;
-  border-radius: 3px;
-  padding: 4px 10px;
-  font-size: 12px;
-  color: white;
-  background-color: #FCCA83;
+  // border-radius: 3px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #FCB040;
+  // background-color: #FCCA83;
 }
 
+
 a:hover {
-  background-color: #FCB040;
-  color: white;
+  // background-color: #FCB040;
+  color: #FCB040;
 }
 
 img {
   width: 30px;
   height: auto;
+  padding: none;
 
 }
 }
