@@ -92,9 +92,17 @@ body.homepage {
   }
 }
 
-body#maps {
-  background-image: url(asset-path('tickets.jpg'));
+// body.nearby {
+// background-color: #EAE3D1;
+// }
+
+body.discover {
+  background-color: #EAE3D1;
 }
+
+.card {
+}
+
 
 
 .jumbotron {
@@ -127,6 +135,7 @@ img {
 
 }
 }
+
 
 
 
