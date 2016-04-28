@@ -11,7 +11,7 @@ class StaticsController < ApplicationController
     @flare = Flare.new
 
     if params[:address].present?
-      @flares = Flare.near(params[:address], 5)
+      @flares = Flare.near(params[:address], 2)
     else
       @flares = Flare.all
     end
