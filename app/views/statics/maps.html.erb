@@ -1,0 +1,26 @@
+<h1>Nearby</h1>
+
+<p>
+<strong>Location:</strong>
+<%= @flare.address %>
+</p>
+<p>
+<strong>Latitude:</strong>
+<%= @flare.latitude %>
+</p>
+<p>
+<strong>Longitude:</strong>
+<%= @flare.longitude %>
+</p>
+
+<!-- <%# for flare in @flare.nearbys(10) %>
+<li><%#= link_to flare.address, flare %>(<#%= flare.distance.round(2) %> miles)</li>
+<#% end %> -->
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script>
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+</script>

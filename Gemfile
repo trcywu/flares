@@ -67,6 +67,10 @@ gem 'acts_as_commentable_with_threading'
 
 gem 'geocoder'
 
+gem 'gmaps4rails'
+
+gem 'underscore-rails'
+
 
 
 

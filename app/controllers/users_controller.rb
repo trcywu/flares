@@ -3,6 +3,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @flares = Flare.all
+    @hash = Gmaps4rails.build_markers(@flares) do |flare, marker|
+      marker.lat flare.latitude
+      marker.lng flare.longitude
+    end
 
   end
 
