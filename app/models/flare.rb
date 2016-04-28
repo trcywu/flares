@@ -4,14 +4,15 @@ class Flare < ActiveRecord::Base
   belongs_to :user
   has_many :comments
   mount_uploader :photo, PhotoUploader
-  attr_accessor :address, :latitude, :longitude
+  
   geocoded_by :address
-  after_validation :geocode
+  after_validation :geocode #, if: :address_changed?
   # reverse_geocoded_by :latitude, :longitude
   # after_validation :reverse_geocode
 
   validates :title, presence: true, length: { in: 3..50 }
   validates :description, presence: true
+  
   # validates :time, presence: true
   validates :category, presence: true
   end

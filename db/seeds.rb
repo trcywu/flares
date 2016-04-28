@@ -38,7 +38,8 @@ f1 = Flare.create!(
   location: "Shoreditch",
   description: "1 x highaskite ticket available, gig starting in 30 minutes",
   start_date: "20160427",
-  start_time: "2016-04-27 22:00:00 UTC"
+  start_time: "2016-04-27 22:00:00 UTC",
+  address: "E1 5JL"
 )
 
 f2 = Flare.create!(
@@ -48,7 +49,8 @@ f2 = Flare.create!(
   location: "Brixton",
   description: "1 x SectionBoyz ticket available, gig starting in 30 minutes",
   start_date: "20160527",
-  start_time: "2016-05-27 22:00:00 UTC"
+  start_time: "2016-05-27 22:00:00 UTC",
+  address: "E1 6QL"
 )
 
 f3 = Flare.create!(
@@ -58,7 +60,8 @@ f3 = Flare.create!(
   location: "Ronnie Scotts",
   description: "1 x jazz ticket available, gig starting in 30 minutes",
   start_date: "20160427",
-  start_time: "2016-04-27 21:00:00 UTC"
+  start_time: "2016-04-27 21:00:00 UTC",
+  address: "E1 1JU"
 )
 
 f4 = Flare.create!(
@@ -68,7 +71,8 @@ f4 = Flare.create!(
   location: "Royal Albert Hall",
   description: "1 x Beethoven ticket available, gig starting in 30 minutes",
   start_date: "20160428",
-  start_time: "2016-04-28 22:00:00 UTC"
+  start_time: "2016-04-28 22:00:00 UTC",
+  address: "EC2N 4AY"
 )
 
 u1.profile_pic = Rails.root.join("app/assets/images/flume.jpg").open

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+  get "/maps", to: "statics#maps"
 
   resources :comments
   root "statics#home"
