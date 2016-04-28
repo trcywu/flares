@@ -100,9 +100,17 @@ body.discover {
   background-color: #EAE3D1;
 }
 
-.card {
-}
+// .card {
+//   background-color: #A7D0D2;
+// }
 
+.btn-primary {
+  background-color: #2DB8AF;
+  border-color: #2DB8AF;
+  a :hover{
+    background-color: #18B8B7;
+  }
+}
 
 
 .jumbotron {
