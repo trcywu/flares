@@ -1,9 +1,6 @@
 
 <% if !flare.photo %>
 
-<!-- id: 24, title: "hello world", description: "aoeiwhrauehr awkeuhrv awerv ", category: "", location: "", date: nil, time: nil, user_id: 30, created_at: "2016-04-25 13:26:04", updated_at: "2016-04-25 13:26:04", photo: nil>
-irb(main):002:0>  -->
-
 <div class="card card-block card-inverse card-primary text-xs-center">
   <blockquote class="card-blockquote">
     <p class="card-title"><%= flare.title %></p>
@@ -15,9 +12,6 @@ irb(main):002:0>  -->
   </blockquote>
 </div>
 
-
-
-
 <% else %>
 
 <div class="card">
@@ -26,6 +20,7 @@ irb(main):002:0>  -->
     <h4 class="card-title"><%= link_to flare.title, flare_path(flare.id) %></h4>
     <p class="card-text"><%= flare.description %></p>
     <p class="card-text">Category: <%= flare.category %></p>
+    
     <p class="card-text">Date: <%= flare.start_date.strftime("%B %d, %Y") %></p>
       <p class="card-text">Time: <%= flare.start_time.strftime('%H:%M') %></p>
     <p class="card-text">Location: <%= flare.location %></p>

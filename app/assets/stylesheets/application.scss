@@ -18,6 +18,21 @@
   min-width: 0px;
 }
 
+.flare {
+  // border: 3px solid #FCB040;
+  border-radius: 3px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: white;
+  background-color: #FCCA83;
+}
+
+.flare:hover {
+  background-color: #FCB040;
+  // color: #FCB040;
+
+}
+
 
  .img-fluid {
   max-width: 400px;
@@ -75,6 +90,10 @@ body.homepage {
   .navbar {
     background-color: transparent;
   }
+}
+
+body#maps {
+  background-image: url(asset-path('tickets.jpg'));
 }
 
 

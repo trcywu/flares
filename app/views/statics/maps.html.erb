@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="maps">
 <%= form_tag maps_path, method: :get do %>
   <%= label :address, "Search nearby : " %>
   <%= text_field_tag :address, params[:address], placeholder: "Enter Postcode" %>

@@ -4,21 +4,21 @@
     <li class="nav-item active">
      <%= link_to "Home", root_path, class: "nav-link" %>
    </li>
-   <li class="nav-item">
-    <%= link_to "Users", users_path, class: "nav-link" %>
-  </li>
+   <!-- <li class="nav-item">
+    <%#= link_to "Users", users_path, class: "nav-link" %>
+  </li> -->
   <li class="nav-item">
-    <%= link_to flares_path, class: "nav-link" do %><i class="fa fa-rocket" aria-hidden="true"></i> Discover
+    <%= link_to flares_path, class: "nav-link" do %><i class="fa fa-rocket fa-2x" aria-hidden="true"></i> Discover
     <% end %>
   </li>
   <li class="nav-item">
     <%= link_to maps_path, class: "nav-link" do%>
-    <i class="fa fa-bolt" aria-hidden="true"></i> Nearby
+    <i class="fa fa-bolt fa-2x" aria-hidden="true"></i> Nearby
     <% end %>
   </li>
-
-
 </ul>
+
+
 <form class="form-inline pull-xs-left">
   <ul class="nav-item">
     <%= search_form_for @q, url: search_flares_path, html: { method: :post } do |f| %>
@@ -36,8 +36,8 @@
 <ul class="nav navbar-nav pull-md-right">
 
   <li class='nav-item'>
-    <%= link_to new_flare_path do %>
-    <i class='fa fa-fire fa-2x' aria-hidden='true'> Flare</i>
+    <%= link_to new_flare_path, class: "flare" do %>
+    <i class='fa fa-fire fa-2x' aria-hidden='true'></i> Flare
     <% end %>
   </li>
 
@@ -45,17 +45,30 @@
   <li class="dropdown nav-item">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %> <span class="caret"></span></a>
     <ul class="dropdown-menu">
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
-      <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
-      <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
+      <%= link_to "Account", user_path(current_user.id), class: "nav-link" %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
     </ul>
-  </li>
-
-  <% end %>
-
+    <% else %>
+    <li class='nav-item'>
+      <%= link_to new_user_session_path, class: "nav-link" do %>
+      <i class="fa fa-user" aria-hidden="true"></i> Login
+    </li>
+    <% end %>
+    </li>
+    <% end %>
 </ul>
 </nav>
+
+
+
+
+
+  <!-- <ul class="dropdown-menu">
+  <%#= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+  <%#= link_to "Register", new_user_registration_path, class: "nav-link" %>
+  </ul>
+</li> -->
+
 
 
 
