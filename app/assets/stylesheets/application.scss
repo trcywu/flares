@@ -24,7 +24,7 @@
   padding: 8px 16px;
   font-size: 14px;
   color: white;
-  background-color: #FCCA83;
+  border: 2px solid
 }
 
 .flare:hover {
@@ -81,6 +81,14 @@
 
  .navbar navbar{
 
+ }
+
+ input#q_location_cont {
+  height: 35px;
+ }
+
+ input#q_title_cont {
+  height: 35px;
  }
 
 body.homepage {
@@ -141,6 +149,16 @@ div#edituser {
 
 }
 
+div#flareform {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #1F1F3C;
+
+}
+
 // .card {
 //   background-color: #A7D0D2;
 // }
@@ -189,6 +207,59 @@ img {
 }
 }
 
+button {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  /* position: static; */
+  vertical-align: sub;
+}
+
+li.nav-item a.flare {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+li.nav-item a.dropdown-toggle {
+  display: inline-block;
+}
+
+
+@media (max-width: 830px) {
+  ul.nav.navbar-nav.pull-md-right {
+    display: block !important;
+  }
+}
 
 
 
+h4.card-title a {
+  color: #2DB8AF;
+}
+
+h4.card-title a:hover {
+  color: #32827C;
+}
+
+.btn-primary:hover {
+  background-color: #32827C;
+  border: 1px solid #32827C;
+}
+
+navbar a:hover {
+  color: blue !important;
+}
+
+.btn {
+  background-color: #2DB8AF;
+}
+
+
+.display-5 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card card-block card-inverse card-primary text-xs-center {
+  background-color: white;
+}

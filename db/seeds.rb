@@ -42,7 +42,7 @@ f2 = Flare.create!(
   category: "Gig",
   location: "Brixton Academt",
   description: "2 x SectionBoyz ticket available, gig starting in 1 hour",
-  start_date: "20160429",
+  start_date: "20160430",
   start_time: "2016-04-29 19:30:00 UTC",
   address: "SW9 9SL"
 )
@@ -54,7 +54,7 @@ f3 = Flare.create!(
   location: "Ronnie Scotts",
   description: "My sister bailed on me last minute so I have a spare ticket to Regina Carter. Pick up at location.",
   start_date: "20160429",
-  start_time: "2016-04-29 21:00:00 UTC",
+  start_time: "2016-04-30 21:00:00 UTC",
   address: "W1D 4HT"
 )
 
@@ -116,12 +116,12 @@ f8 = Flare.create!(
 f9 = Flare.create!(
   user_id: u2.id,
   title: "Cocktail Making class for 2 tonight",
-  category: "Theatre",
-  location: "London",
+  category: "Event",
+  location: "Strongroom Bar & Kitchen",
   description: "2 x tickets available under the name Steven King",
   start_date: "20160429",
   start_time: "2016-04-29 20:00:00 UTC",
-  address: "SE1 8XX"
+  address: "EC2A 3SQ"
 )
 
 

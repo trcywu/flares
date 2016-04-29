@@ -21,18 +21,21 @@
 </ul>
 
 
-<form class="form-inline pull-xs-left">
-  <ul class="nav-item">
-    <%= search_form_for @q, url: search_flares_path, html: { method: :post } do |f| %>
-    <p>
-      <%= f.text_field :title_cont, placeholder: "Looking for", class: "form-control" %>  near
-      <%= f.text_field :location_cont, placeholder: "Location", class: "form-control" %>
-      <%= link_to search_flares_path, class: "nav-link" do %><i class="fa fa-search" aria-hidden="true"></i>
-      <% end %>
-      <% end %> 
-    </p>
-  </ul>
-</form>
+<%= search_form_for @q, url: search_flares_path, html: { method: :post }, class: "form-inline pull-xs-left" do |f| %>
+<div class="nav-item">
+  <p>
+    <%= f.text_field :title_cont, placeholder: "Looking for", class: "form-control" %>  near
+    <%= f.text_field :location_cont, placeholder: "Location", class: "form-control" %>
+
+    <button> 
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+
+  </p>
+
+</div>
+<% end %> 
+
 
 
 
@@ -40,7 +43,7 @@
 
   <li class='nav-item'>
     <%= link_to new_flare_path, class: "flare" do %>
-    <i class='fa fa-fire fa-2x' aria-hidden='true'></i> Flare
+    <i class='fa fa-fire' aria-hidden='true'></i> Flare
     <% end %>
   </li>
 
@@ -58,8 +61,8 @@
       <i class="fa fa-user fa-2x" aria-hidden="true"></i> Login
     </li>
     <% end %>
-    </li>
-    <% end %>
+  </li>
+  <% end %>
 </ul>
 </nav>
 

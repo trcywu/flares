@@ -56,9 +56,10 @@ class FlaresController < ApplicationController
         end
       end
 
-  # Caroline: 
+
   def search
-    index
+    @q = Flare.ransack(params[:q])
+    @flares = @q.result(distinct: true)
     render :index
   end
 

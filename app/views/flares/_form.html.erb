@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="flareform">
 <h1>Flare up</h1>
 <%= form_for @flare do |f| %>
   <% if @flare.errors.any? %>
@@ -14,8 +14,12 @@
   </fieldset>
 
   <fieldset class="form-group">
+    <%= f.text_field :description, class: "form-control", placeholder: "Description" %>
+  </fieldset>
+
+  <fieldset class="form-group">
     <%= f.label :category %>
-    <%= f.select :category,["Music", "Theatre", "Sport", "Event", "Gig"], prompt: "Please select", class: "form-control""%>
+    <%= f.select :category,["Music", "Theatre", "Sport", "Event", "Gig"], prompt: "Please select", class: "form-control"%>
   </fieldset>
 
   <fieldset class="form-group">
@@ -24,10 +28,6 @@
 
   <fieldset class="form-group">
     <%= f.text_field :address, class: "form-control",  placeholder: "Address" %>
-  </fieldset>
-
-  <fieldset class="form-group">
-    <%= f.text_field :description, class: "form-control", placeholder: "Description" %>
   </fieldset>
 
   <fieldset class="form-group">

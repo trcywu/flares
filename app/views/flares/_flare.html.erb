@@ -3,10 +3,17 @@
 
 <div class="card card-block card-inverse card-primary text-xs-center">
   <blockquote class="card-blockquote">
-    <p class="card-title">IM SMALL <%= flare.title %></p>
+    <p class="card-title"><%= link_to flare.title, flare_path(flare.id) %></p>
     <footer>
       <small>
         <p class="class-text"><%= flare.description %></p>
+        <p class="card-text">Category: <%= flare.category %></p>
+        
+        <p class="card-text">Date: <%= flare.start_date.strftime("%B %d, %Y") %></p>
+          <p class="card-text">Time: <%= flare.start_time.strftime('%H:%M') %></p>
+        <p class="card-text">Location: <%= flare.location %></p>
+        <p class="card-text">Address: <%= flare.address %></p>
+        <p class="card-text"><small class="text-muted">Listed <%= distance_of_time_in_words(Time.now, flare.created_at) %> ago</small></p>
       </small>
     </footer>
   </blockquote>
@@ -36,13 +43,12 @@
       <%= link_to "Delete", flare_path(flare), method: :delete, class: "btn btn-primary" %>
         <% end %>
 
-
     <% else %>
       <%= link_to "More", flare_path(flare.id) , class: "btn btn-primary" %>
     <% end %>
 
 
-    <i class="fa fa-comments"></i> <%= flare.comments.count %>
+    <i class="fa fa-comments"></i> <%= flare.comment_threads.count %>
   </div> 
 </div>
 
