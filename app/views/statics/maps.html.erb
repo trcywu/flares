@@ -1,8 +1,9 @@
-<div class="container" id="maps">
-<%= form_tag maps_path, method: :get do %>
+<div class="jumbotron" id="maps">
+  <h1 class="display-3">Hello, world!</h1>
+<%= form_tag maps_path, class: "nearbybar",  method: :get do %>
   <%= label :address, "Search nearby : " %>
   <%= text_field_tag :address, params[:address], placeholder: "Enter Postcode" %>
-  <%= submit_tag "Search" %>
+   <a class="btn btn-primary btn-lg"><%= submit_tag "Search" %></a>
 <% end %>
 
 <div style='width: 800px;'>

@@ -100,6 +100,47 @@ body.discover {
   background-color: #EAE3D1;
 }
 
+div#maps {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #2E2E38;
+}
+
+form.nearbybar {
+  padding-bottom: 20px;
+}
+
+div#register {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+div#login {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+div#edituser {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #1F1F3C;
+
+}
+
 // .card {
 //   background-color: #A7D0D2;
 // }
@@ -112,6 +153,10 @@ body.discover {
   }
 }
 
+.form-control {
+  background-color: #EAE9E8;
+  border-color: #EAE9E8;
+}
 
 .jumbotron {
   color: #C86100;

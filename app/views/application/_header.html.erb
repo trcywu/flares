@@ -25,15 +25,16 @@
   <ul class="nav-item">
     <%= search_form_for @q, url: search_flares_path, html: { method: :post } do |f| %>
     <p>
-      <%= f.text_field :title_cont, placeholder: "Looking for", class: "form-control" %> near
+      <%= f.text_field :title_cont, placeholder: "Looking for", class: "form-control" %>  near
       <%= f.text_field :location_cont, placeholder: "Location", class: "form-control" %>
-      <%= f.submit do %>
-      <i class="fa fa-search" aria-hidden="true"></i>
+      <%= link_to search_flares_path, class: "nav-link" do %><i class="fa fa-search" aria-hidden="true"></i>
       <% end %>
       <% end %> 
     </p>
   </ul>
 </form>
+
+
 
 <ul class="nav navbar-nav pull-md-right">
 
