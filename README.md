@@ -2,26 +2,36 @@
 
 ## Flares
 
-This is a website on geolocation ticket discovery. When someone has a last minute ticket before an event that they don't want to go to waste, they can go on the wesbite and give it away. There is no exchange of money and is on a first come first serve basis. 
+### Introduction
+This is a Ruby on Rails project built between 21/04/2016 - 26/01/2016. This is 2/4 projects that were completed during the General Assembly Web Immersive Course. 
 
-A flare is ignited with the details of the ticket, and extinguished once someone has taken up on the offer or passed the start time of the event. 
+### The Idea
 
-User story
+Every day, hundreds of tickets and reservations that could not be honoured at the last minute due to conflicting circumstances are gone to waste. This is a website where users can browse through last minute listings of tickets/events that people cannot attend and are happy to give away to whoever is available.
 
-Amy and Zoe had tickets to see Adele on Thursday night at 7pm. At 6pm on the day, she receives a call from Zoe to say that she has food poisonin having ate some bad sushi at lunch and cannot leave the bathroom. Not wanting the $150 ticket to go to waste, Amy frantically calls around her circle of friends to see if anyone else is available but at such short notice couldn't find anyone.
+### Planning
 
-Enter Flares.
+Below is a snapshot of how I planned the execution of the project.
 
-At 6:30pm, with only 30 minutes to go before the start of the concert, Amy posts up her spare ticket on Flares. 
+![screenshot of game](https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13082613_10156810730170394_6168927710384271292_n.jpg?oh=7cbfbaf0e2c46afeb146580dabcc0a2b&oe=57A1191D)
 
-1 x Adele Ticket
-Location: Wembley Stadium, London
-Description: Spare Adele ticket available for anyone who wants it. Don't want it to go to waste. 
-Specifications: Must have name Elizabeth Gallagher
-Start time: 7pm
+### Wireframes
 
-This flare will disappear in 20 minutes..
+Wireframes were drawn by hand and then brought to life via Balsamiq to visualise the user journey for the website.
 
+![screenshot of game](https://scontent-lhr3-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/13083271_10156810730175394_8710696936534971244_n.jpg?oh=4ce3413d00963b35e6c757657f5ef7d1&oe=57AF567F)
 
 
+###Technologies
+
+Flare was built with Ruby on Rails 4 with the following 
+
+JavaScript
+Bootstrap
+
+
+![screenshot of game](https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/13124963_10156810730180394_2148908721697368316_n.jpg?oh=91b6729711780f35563a1953ea25225d&oe=579E737C)
+
+
+Check out the website [here](http://cryptic-plateau-66934.herokuapp.com/)
 
